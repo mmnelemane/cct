@@ -16,5 +16,6 @@ namespace :features do
   desc "Run barclamp tests"
   task :barclamps do
     invoke_task "feature:barclamp:rabbitmq"
+    invoke_task "feature:barclamp:keystone"
   end
 end

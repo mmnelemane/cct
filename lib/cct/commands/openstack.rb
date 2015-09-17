@@ -22,6 +22,7 @@ module Cct
         attr_reader :project
         attr_reader :network
         attr_reader :role
+        attr_reader :host
 
         # @param [Cct::Node] as the receiver for the openstack client
         def initialize node
@@ -30,6 +31,7 @@ module Cct
           @project = Openstack::Project.new(node)
           @network = Openstack::Network.new(node)
           @role = Openstack::Role.new(node)
+          @host = Openstack::Host.new(node)
         end
 
         def actions
@@ -222,4 +224,5 @@ require 'cct/commands/openstack/user'
 require 'cct/commands/openstack/project'
 require 'cct/commands/openstack/network'
 require 'cct/commands/openstack/role'
+require 'cct/commands/openstack/host'
 
